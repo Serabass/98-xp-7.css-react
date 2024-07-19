@@ -13,6 +13,10 @@ export function MaximizeButton() {
   return <button aria-label="Maximize" />;
 }
 
+export function RestoreButton() {
+  return <button aria-label="Restore" />;
+}
+
 export function MinimizeButton() {
   return <button aria-label="Minimize" />;
 }
@@ -52,7 +56,7 @@ interface WindowProps {
 
 export function Window({ title, titleBar, children, width, height }: WindowProps) {
   return (
-    <div className="window" style={{ margin: 32, width: width, height: height }}>
+    <div className="window" style={{ width: width, height: height }}>
       {title && <WindowTitleBar title={title} options={titleBar} />}
       {children && <div className="window-body">{children}</div>}
     </div>
