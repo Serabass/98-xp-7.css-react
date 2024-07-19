@@ -1,5 +1,5 @@
 interface StatusBarProps {
-  fields: string[];
+  fields: React.ReactNode[];
 }
 
 export function StatusBar({ fields }: StatusBarProps) {
