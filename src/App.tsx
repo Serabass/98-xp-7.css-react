@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '98.css';
+import { Dropdown } from './Dropdown';
+import { StatusBar } from './StatusBar';
+import { Tabs } from './Tabs';
+import { Window } from './Window';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Window title="My First VB4 Program">
+        <Tabs
+          tabs={[
+            {
+              title: 'Desktop',
+              content: <p>Desktop</p>
+            },
+            {
+              title: 'My computer',
+              content: <p>My computer</p>
+            },
+          ]}
+        />
+
+        <Dropdown options={['Desktop', 'My computer']} />
+
+        <StatusBar fields={['Press F1 for help', 'Slide 1', 'CPU Usage: 14%']} />
+      </Window>
     </div>
   );
 }
